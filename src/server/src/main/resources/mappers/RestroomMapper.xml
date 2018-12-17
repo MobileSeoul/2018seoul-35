@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.sspr.mappers.RestroomMapper">
+
+	<update id="updateRestroom">
+		update tbl_restroom
+		set 
+		state = #{state},
+		msg = #{msg},
+		updatedate = now()
+		where id = #{id}
+	</update>
+
+	<insert id="insertRestroom">
+		insert into tbl_restroom
+		(id,state,msg,updatedate) values
+		(#{id}, #{state}, #{msg}, now())
+	</insert>
+
+	<select id="readRestrrom" resultType="RestroomVO">
+		select
+		id,state,msg,updatedate
+		from
+		tbl_restroom
+		where
+		id =
+		#{id}
+	</select>
+
+</mapper>

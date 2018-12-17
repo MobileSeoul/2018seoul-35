@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#ffffff"
+    android:padding="15dp"
+    tools:context=".Activity.WriteReportActivity">
+
+    <EditText
+        android:id="@+id/writer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="글쓴이"
+        android:padding="10dp"
+        android:background="#f1eae2"
+        android:layout_marginBottom="10dp"
+        />
+
+    <EditText
+        android:id="@+id/pwd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="비밀번호"
+        android:padding="10dp"
+        android:background="#f1eae2"
+        android:layout_marginBottom="10dp"
+        />
+    <EditText
+        android:id="@+id/msg"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#f1eae2"
+        android:padding="10dp"
+        android:hint="내용을 기입해주세요."
+        android:layout_marginBottom="10dp"
+        />
+
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="10dp"
+        android:background="#f1eae2"
+
+        android:scaleType="center"
+        android:src="@drawable/camera" />
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="등록"
+        android:textColor="#ffffff"
+        android:background="@color/colorMain"
+        />
+</LinearLayout>

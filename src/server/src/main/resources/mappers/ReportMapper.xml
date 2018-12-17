@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.sspr.mappers.ReportMapper">
+
+	<insert id="insertReport">
+		insert into tbl_report
+		(restroom_id,writer,pwd,msg,img,updatedate) values
+		(#{restroom_id}, #{writer}, #{pwd}, #{msg}, #{img}, now())
+	</insert>
+	
+	<select id="readReports"  resultType="ReportVO">
+	select report_id,restroom_id,writer,msg,img,updatedate from
+	tbl_report
+	where restroom_id = #{restroom_id}
+	order by report_id desc
+	</select>
+	
+	<select id="readReport"  resultType="ReportVO">
+	select report_id,restroom_id,writer,msg,img,updatedate from
+	tbl_report
+	where report_id = #{report_id}
+	</select>
+	
+	<delete id="deleteReport">
+	delete from tbl_report
+	where report_id = #{report_id}
+	and pwd = #{pwd}
+	</delete>
+
+</mapper>
